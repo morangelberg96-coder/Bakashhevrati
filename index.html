@@ -216,15 +216,49 @@
                         <h4 class="text-xl font-semibold text-rose-600 mb-2 n-txt" data-n="הַבְּחִירָה שֶׁלִּי ✅" data-p="הבחירה שלי ✅">הַבְּחִירָה שֶׁלִּי ✅</h4>
                         <label class="block text-sm text-slate-600 mb-3 n-txt" data-n="אֵיזוֹ מִבֵּין הַתְּגוּבוֹת שֶׁכָּתַבְתָּ הִיא הַמַּתְאִימָה וְהַנְּכוֹנָה בְּיוֹתֵר עֲבוּרְךָ לְפִתְרוֹן הַסִּיטוּאַצְיָה?" data-p="איזו מבין התגובות שכתבת היא המתאימה והנכונה ביותר עבורך לפתרון הסיטואציה?">אֵיזוֹ מִבֵּין הַתְּגוּבוֹת שֶׁכָּתַבְתָּ הִיא הַמַּתְאִימָה וְהַנְּכוֹנָה בְּיוֹתֵר עֲבוּרְךָ לְפִתְרוֹן הַסִּיטוּאַצְיָה?</label>
                         
-                        <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                        <div class="flex flex-col sm:flex-row gap-3 mb-5">
                             <select id="final-choice" class="flex-1 p-3 border border-rose-300 rounded-xl bg-white font-medium focus:ring-2 focus:ring-rose-400 outline-none">
                                 <option value="" class="n-txt" data-n="-- בַּחֲרוּ תְּגוּבָה מֵהָרְשִׁימָה --" data-p="-- בחרו תגובה מהרשימה --">-- בַּחֲרוּ תְּגוּבָה מֵהָרְשִׁימָה --</option>
                                 <option value="1" class="n-txt" data-n="תְּגוּבָה 1" data-p="תגובה 1">תְּגוּבָה 1</option>
                                 <option value="2" class="n-txt" data-n="תְּגוּבָה 2" data-p="תגובה 2">תְּגוּבָה 2</option>
                                 <option value="3" class="n-txt" data-n="תְּגוּבָה 3" data-p="תגובה 3">תְּגוּבָה 3</option>
                             </select>
-                            <button type="button" id="check-feedback-btn" class="bg-rose-500 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-rose-600 transition-colors flex items-center justify-center gap-2 relative">
-                                <span id="btn-text" class="n-txt" data-n="קַבֵּל מָשׁוֹב מֵהַבִּינָה הַמְּלָאכוּתִית" data-p="קבל משוב מהבינה המלאכותית">קַבֵּל מָשׁוֹב מֵהַבִּינָה הַמְּלָאכוּתִית</span>
+                        </div>
+
+                        <!-- בחירת מפלצת יועצת -->
+                        <div class="mb-5 bg-white/60 p-4 rounded-xl border border-rose-100">
+                            <label class="block text-sm font-semibold text-slate-700 mb-3 n-txt" data-n="מִי תִּרְצוּ שֶׁיְּיַעֵץ לָכֶם? (בַּחֲרוּ מִפְלֶצֶת) 👾" data-p="מי תרצו שייעץ לכם? (בחרו מפלצת) 👾">מִי תִּרְצוּ שֶׁיְּיַעֵץ לָכֶם? (בַּחֲרוּ מִפְלֶצֶת) 👾</label>
+                            <div class="flex gap-4 justify-center sm:justify-start">
+                                <!-- Moko -->
+                                <label class="cursor-pointer relative group">
+                                    <input type="radio" name="advisor-monster" value="moko" class="peer sr-only" checked>
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-4 border-transparent peer-checked:border-blue-400 peer-checked:bg-blue-50 peer-checked:shadow-md flex flex-col items-center justify-center transition-all bg-white hover:bg-slate-50 shadow-sm">
+                                        <svg viewBox="0 0 100 100" class="w-10 h-10 sm:w-12 sm:h-12"><rect x="10" y="20" width="80" height="70" rx="35" fill="#60a5fa"/><circle cx="35" cy="50" r="10" fill="white"/><circle cx="65" cy="50" r="10" fill="white"/><circle cx="35" cy="50" r="4" fill="#1e3a8a"/><circle cx="65" cy="50" r="4" fill="#1e3a8a"/><path d="M 40 75 Q 50 85 60 75" fill="none" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/></svg>
+                                    </div>
+                                    <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-bold text-slate-500 peer-checked:text-blue-600 n-txt" data-n="מוֹקוֹ" data-p="מוקו">מוֹקוֹ</span>
+                                </label>
+                                <!-- Tofu -->
+                                <label class="cursor-pointer relative group">
+                                    <input type="radio" name="advisor-monster" value="tofu" class="peer sr-only">
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-4 border-transparent peer-checked:border-pink-400 peer-checked:bg-pink-50 peer-checked:shadow-md flex flex-col items-center justify-center transition-all bg-white hover:bg-slate-50 shadow-sm">
+                                        <svg viewBox="0 0 100 100" class="w-10 h-10 sm:w-12 sm:h-12"><path d="M 50 10 L 90 85 Q 90 95 80 95 L 20 95 Q 10 95 10 85 Z" fill="#f472b6"/><circle cx="50" cy="65" r="14" fill="white"/><circle cx="50" cy="65" r="6" fill="#831843"/><path d="M 42 85 Q 50 92 58 85" fill="none" stroke="#831843" stroke-width="3" stroke-linecap="round"/></svg>
+                                    </div>
+                                    <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-bold text-slate-500 peer-checked:text-pink-600 n-txt" data-n="טוֹפוּ" data-p="טופו">טוֹפוּ</span>
+                                </label>
+                                <!-- Zigi -->
+                                <label class="cursor-pointer relative group">
+                                    <input type="radio" name="advisor-monster" value="zigi" class="peer sr-only">
+                                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-4 border-transparent peer-checked:border-emerald-400 peer-checked:bg-emerald-50 peer-checked:shadow-md flex flex-col items-center justify-center transition-all bg-white hover:bg-slate-50 shadow-sm">
+                                        <svg viewBox="0 0 100 100" class="w-10 h-10 sm:w-12 sm:h-12"><circle cx="50" cy="55" r="40" fill="#34d399"/><circle cx="30" cy="45" r="8" fill="white"/><circle cx="50" cy="40" r="8" fill="white"/><circle cx="70" cy="45" r="8" fill="white"/><circle cx="30" cy="45" r="3" fill="#064e3b"/><circle cx="50" cy="40" r="3" fill="#064e3b"/><circle cx="70" cy="45" r="3" fill="#064e3b"/><path d="M 40 70 L 60 70" stroke="#064e3b" stroke-width="4" stroke-linecap="round"/></svg>
+                                    </div>
+                                    <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-bold text-slate-500 peer-checked:text-emerald-600 n-txt" data-n="זִיגִי" data-p="זיגי">זִיגִי</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex mt-8 mb-4">
+                            <button type="button" id="check-feedback-btn" class="w-full bg-rose-500 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-rose-600 transition-colors flex items-center justify-center gap-2 relative">
+                                <span id="btn-text" class="n-txt" data-n="קַבֵּל מָשׁוֹב מֵהַמִּפְלֶצֶת שֶׁבָּחַרְתִּי" data-p="קבל משוב מהמפלצת שבחרתי">קַבֵּל מָשׁוֹב מֵהַמִּפְלֶצֶת שֶׁבָּחַרְתִּי</span>
                                 <svg id="btn-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 <svg id="btn-spinner" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden absolute left-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                             </button>
@@ -233,6 +267,31 @@
                         <!-- הודעת משוב דינמית -->
                         <div id="feedback-message" class="hidden p-4 rounded-xl border text-sm md:text-base leading-relaxed transition-all duration-300 transform bg-white border-rose-200">
                             <!-- Populated by AI -->
+                        </div>
+                    </div>
+
+                    <!-- החיבור האישי (נפתח אחרי קבלת משוב) -->
+                    <div id="personal-reflection-section" class="hidden bg-blue-50 p-5 rounded-2xl border border-blue-200 shadow-sm transition-all duration-500 transform scale-95 opacity-0">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-4 flex items-center gap-2">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                            <span class="n-txt" data-n="הַחִבּוּר הָאִישִׁי שֶׁלִּי 📖" data-p="החיבור האישי שלי 📖">הַחִבּוּר הָאִישִׁי שֶׁלִּי 📖</span>
+                        </h4>
+                        
+                        <p class="text-sm text-slate-600 mb-4 n-txt" data-n="כָּעֵת, אַחֲרֵי שֶׁנִּתַּחְנוּ אֶת הַסִּיטוּאַצְיָה, בּוֹאוּ נְחַבֵּר אֶת זֶה לַחַיִּים שֶׁלָּכֶם:" data-p="כעת, אחרי שניתחנו את הסיטואציה, בואו נחבר את זה לחיים שלכם:">כָּעֵת, אַחֲרֵי שֶׁנִּתַּחְנוּ אֶת הַסִּיטוּאַצְיָה, בּוֹאוּ נְחַבֵּר אֶת זֶה לַחַיִּים שֶׁלָּכֶם:</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1 n-txt" data-n="תָּאֲרוּ סִיטוּאַצְיָה דּוֹמָה שֶׁקָּרְתָה לָכֶם:" data-p="תארו סיטואציה דומה שקרתה לכם:">תָּאֲרוּ סִיטוּאַצְיָה דּוֹמָה שֶׁקָּרְתָה לָכֶם:</label>
+                                <textarea id="personal-situation" rows="2" class="w-full p-2.5 bg-white border border-blue-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-300 transition-shadow n-txt" data-n="מָתַי קָרָה לָכֶם מַשֶּׁהוּ דּוֹמֶה?" data-p="מתי קרה לכם משהו דומה?" placeholder="מָתַי קָרָה לָכֶם מַשֶּׁהוּ דּוֹמֶה?"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1 n-txt" data-n="אֵיךְ הֵגַבְתֶּם אָז (בַּזְּמַן שֶׁזֶּה קָרָה)?" data-p="איך הגבתם אז (בזמן שזה קרה)?">אֵיךְ הֵגַבְתֶּם אָז (בַּזְּמַן שֶׁזֶּה קָרָה)?</label>
+                                <textarea id="personal-reaction" rows="2" class="w-full p-2.5 bg-white border border-blue-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-300 transition-shadow n-txt" data-n="מָה עֲשִׂיתֶם אָז?" data-p="מה עשיתם אז?" placeholder="מָה עֲשִׂיתֶם אָז?"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-1 n-txt" data-n="הַאִם הַיּוֹם הֱיִיתֶם מְגִיבִים אַחֶרֶת? אֵיךְ?" data-p="האם היום הייתם מגיבים אחרת? איך?">הַאִם הַיּוֹם הֱיִיתֶם מְגִיבִים אַחֶרֶת? אֵיךְ?</label>
+                                <textarea id="personal-future" rows="2" class="w-full p-2.5 bg-white border border-blue-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-300 transition-shadow n-txt" data-n="בְּמַבָּט לְאָחוֹר, מָה הֱיִיתֶם מְשַׁנִּים?" data-p="במבט לאחור, מה הייתם משנים?" placeholder="בְּמַבָּט לְאָחוֹר, מָה הֱיִיתֶם מְשַׁנִּים?"></textarea>
+                            </div>
                         </div>
                     </div>
 
@@ -549,6 +608,32 @@
             const cardData = cardsData.find(c => c.id == currentCardId);
             const situationText = cardData ? cardData.textPlain : "";
 
+            // Get selected monster info
+            const selectedMonster = document.querySelector('input[name="advisor-monster"]:checked').value;
+            let monsterData = {};
+            if (selectedMonster === 'moko') {
+                monsterData = {
+                    name: isNiqqudOn ? "מוֹקוֹ" : "מוקו",
+                    color: "blue",
+                    persona: "אתה מפלצת כחולה, מתוקה וחברותית בשם מוקו. אתה מדבר בצורה מעודדת, מלאת חיבה (ולפעמים מתלהבת עם מילים כמו 'היי!', 'וואו!').",
+                    svg: '<svg viewBox="0 0 100 100" class="w-8 h-8"><rect x="10" y="20" width="80" height="70" rx="35" fill="#60a5fa"/><circle cx="35" cy="50" r="10" fill="white"/><circle cx="65" cy="50" r="10" fill="white"/><circle cx="35" cy="50" r="4" fill="#1e3a8a"/><circle cx="65" cy="50" r="4" fill="#1e3a8a"/><path d="M 40 75 Q 50 85 60 75" fill="none" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/></svg>'
+                };
+            } else if (selectedMonster === 'tofu') {
+                monsterData = {
+                    name: isNiqqudOn ? "טוֹפוּ" : "טופו",
+                    color: "pink",
+                    persona: "אתה מפלצת ורודה, מצחיקה וקצת שובבה בשם טופו. אתה מדבר בגובה העיניים, עם המון רגש (ולפעמים קצת צוחק 'חי חי חי').",
+                    svg: '<svg viewBox="0 0 100 100" class="w-8 h-8"><path d="M 50 10 L 90 85 Q 90 95 80 95 L 20 95 Q 10 95 10 85 Z" fill="#f472b6"/><circle cx="50" cy="65" r="14" fill="white"/><circle cx="50" cy="65" r="6" fill="#831843"/><path d="M 42 85 Q 50 92 58 85" fill="none" stroke="#831843" stroke-width="3" stroke-linecap="round"/></svg>'
+                };
+            } else {
+                monsterData = {
+                    name: isNiqqudOn ? "זִיגִי" : "זיגי",
+                    color: "emerald",
+                    persona: "אתה מפלצת ירוקה, סקרנית וחכמה בשם זיגי. אתה שואל הרבה שאלות כדי לגרום לילד לחשוב (ומשתמש במילים כמו 'מעניין...', 'המממ...').",
+                    svg: '<svg viewBox="0 0 100 100" class="w-8 h-8"><circle cx="50" cy="55" r="40" fill="#34d399"/><circle cx="30" cy="45" r="8" fill="white"/><circle cx="50" cy="40" r="8" fill="white"/><circle cx="70" cy="45" r="8" fill="white"/><circle cx="30" cy="45" r="3" fill="#064e3b"/><circle cx="50" cy="40" r="3" fill="#064e3b"/><circle cx="70" cy="45" r="3" fill="#064e3b"/><path d="M 40 70 L 60 70" stroke="#064e3b" stroke-width="4" stroke-linecap="round"/></svg>'
+                };
+            }
+
             checkBtn.disabled = true;
             checkBtn.classList.add('opacity-80', 'cursor-not-allowed');
             btnIcon.classList.add('hidden');
@@ -557,21 +642,22 @@
 
             try {
                 const systemPrompt = `אתה יועץ חינוכי ומורה ללמידה חברתית-רגשית (SEL). המטרה שלך היא לעזור לתלמיד לפתח חשיבה ביקורתית ואמפתיה, כמאמן ולא כמטיף.
+דמות חשובה: ${monsterData.persona} אנא התנהג ודבר בדיוק כמו הדמות הזו (הצג את עצמך קצרות במשפט הראשון)!
 הכללים למשוב שלך:
 1. פנה לתלמיד בגובה העיניים ובחום.
 2. קרא את הסיטואציה, ואז את התגובה והתוצאה שהתלמיד בחר וכתב.
 3. איסור מוחלט להציע פתרון! אל תגיד לתלמיד מה לעשות.
 4. אם התלמיד בחר בתגובה תוקפנית (לצעוק, להרביץ, להעליב בחזרה, לזרוק):
    - תן תוקף לרגש שלו ("זה באמת מכעיס ש...").
-   - שאל שאלת מחשבה מעוררת ("האם לדעתך תגובה כזו תפתור את הבעיה או רק תיצור ריב יותר גדול שממנו כולם יפסידו?").
+   - שאל שאלת מחשבה מעוררת (למשל: "האם לדעתך תגובה כזו תפתור את הבעיה או רק תיצור ריב יותר גדול שממנו כולם יפסידו?").
    - בקש ממנו לחשוב על דרך שבה יוכל לעמוד על שלו מבלי לפגוע בצד השני, ולכתוב אותה כאופציה חדשה.
 5. אם התלמיד בחר בתגובה פסיבית/הימנעות (לשתוק, לברוח, לוותר מיד, לשמור בבטן):
    - תן תוקף לקושי ("לפעמים קל יותר לוותר מאשר להתעמת...").
-   - שאל שאלת מחשבה מעוררת ("אבל אם תשתוק, איך הצד השני ידע שהוא פגע בך? האם הבעיה באמת תיפתר?").
+   - שאל שאלת מחשבה מעוררת (למשל: "אבל אם תשתוק, איך הצד השני ידע שהוא פגע בך? האם הבעיה באמת תיפתר?").
    - בקש ממנו לחשוב על דרך מכבדת לדבר על מה שהפריע לו, ולנסות לנסח מחדש.
 6. אם התלמיד בחר בתגובה מקדמת ואסרטיבית (לדבר, להסביר, לשתף, לנסות לפתור יחד):
    - שבח אותו! הסבר לו למה הבחירה שלו מעולה ומראה על בגרות אמיתית.
-7. היה קצר - עד 4 משפטים מקסימום.${isNiqqudOn ? '\n8. חובה: כתוב את כל המשוב שלך עם ניקוד עברי תקני ומלא לחלוטין.' : ''}`;
+7. היה קצר - עד 4 משפטים מקסימום.${isNiqqudOn ? '\n8. חובה: כתוב את כל המשוב שלך (כולל כל מילה) עם ניקוד עברי תקני ומלא לחלוטין. אל תשאיר אף מילה ללא ניקוד!' : ''}`;
                 
                 const userQuery = `סיטואציה: ${situationText}\n\nהפעולה שהתלמיד בחר לעשות: ${actionText}\nהתוצאה שהתלמיד צופה שתקרה בעקבותיה: ${resultText}\n\nאנא כתוב את המשוב שלך לתלמיד עכשיו:`;
 
@@ -596,16 +682,24 @@
                 const result = await response.json();
                 const aiFeedback = result.candidates[0].content.parts[0].text;
 
-                feedbackDiv.className = 'p-5 rounded-2xl border text-sm md:text-base leading-relaxed transition-all duration-300 transform scale-95 opacity-0 bg-rose-50 border-rose-200 text-slate-800 shadow-inner';
+                feedbackDiv.className = `p-5 rounded-2xl border text-sm md:text-base leading-relaxed transition-all duration-300 transform scale-95 opacity-0 bg-${monsterData.color}-50 border-${monsterData.color}-200 text-slate-800 shadow-inner mt-4`;
                 feedbackDiv.innerHTML = `<div class="flex items-start gap-3">
-                    <div class="bg-rose-200 p-2.5 rounded-full text-rose-600 mt-1 shadow-sm">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    <div class="bg-white p-2 rounded-full shadow-sm border border-${monsterData.color}-100 shrink-0 mt-1">
+                        ${monsterData.svg}
                     </div>
                     <div class="w-full">
-                        <strong class="block mb-1 text-rose-700 font-semibold">${isNiqqudOn ? 'יִעוּץ אִישִׁי:' : 'ייעוץ אישי:'}</strong>
+                        <strong class="block mb-1 text-${monsterData.color}-700 font-semibold">${monsterData.name} ${isNiqqudOn ? 'אוֹמֵר:' : 'אומר:'}</strong>
                         ${aiFeedback.replace(/\n/g, '<br>')}
                     </div>
                 </div>`;
+
+                // Show personal reflection section after getting feedback
+                const reflectionSection = document.getElementById('personal-reflection-section');
+                reflectionSection.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    reflectionSection.classList.remove('scale-95', 'opacity-0');
+                    reflectionSection.classList.add('scale-100', 'opacity-100');
+                });
 
             } catch (error) {
                 console.error("Error fetching AI feedback:", error);
@@ -616,7 +710,7 @@
                 checkBtn.classList.remove('opacity-80', 'cursor-not-allowed');
                 btnIcon.classList.remove('hidden');
                 btnSpinner.classList.add('hidden');
-                btnText.textContent = isNiqqudOn ? 'קַבֵּל מָשׁוֹב מֵהַבִּינָה הַמְּלָאכוּתִית' : 'קבל משוב מהבינה המלאכותית';
+                btnText.textContent = isNiqqudOn ? 'קַבֵּל מָשׁוֹב מֵהַמִּפְלֶצֶת שֶׁבָּחַרְתִּי' : 'קבל משוב מהמפלצת שבחרתי';
 
                 feedbackDiv.classList.remove('hidden');
                 requestAnimationFrame(() => {
@@ -641,7 +735,8 @@
             const saved = userAnswers[card.id] || { 
                 a: '', tMe: '', fMe: '', tOther: '', fOther: '',
                 r1a: '', r1r: '', r2a: '', r2r: '', r3a: '', r3r: '',
-                choice: ''
+                choice: '', monster: 'moko',
+                pSit: '', pReact: '', pFut: ''
             };
             
             document.getElementById('input-a').value = saved.a || '';
@@ -658,6 +753,27 @@
             document.getElementById('resp3-result').value = saved.r3r || '';
             
             document.getElementById('final-choice').value = saved.choice || '';
+            
+            // Set saved monster
+            if(saved.monster) {
+                const radio = document.querySelector(`input[name="advisor-monster"][value="${saved.monster}"]`);
+                if(radio) radio.checked = true;
+            }
+
+            // Load personal reflection values
+            document.getElementById('personal-situation').value = saved.pSit || '';
+            document.getElementById('personal-reaction').value = saved.pReact || '';
+            document.getElementById('personal-future').value = saved.pFut || '';
+
+            // Decide whether to show the reflection section initially
+            const reflectionSection = document.getElementById('personal-reflection-section');
+            if (saved.choice || saved.pSit || saved.pReact || saved.pFut) {
+                reflectionSection.classList.remove('hidden', 'scale-95', 'opacity-0');
+                reflectionSection.classList.add('scale-100', 'opacity-100');
+            } else {
+                reflectionSection.classList.add('hidden', 'scale-95', 'opacity-0');
+                reflectionSection.classList.remove('scale-100', 'opacity-100');
+            }
 
             modal.classList.remove('hidden');
             void modal.offsetWidth; 
@@ -694,7 +810,11 @@
                     r2r: document.getElementById('resp2-result').value,
                     r3a: document.getElementById('resp3-action').value,
                     r3r: document.getElementById('resp3-result').value,
-                    choice: document.getElementById('final-choice').value
+                    choice: document.getElementById('final-choice').value,
+                    monster: document.querySelector('input[name="advisor-monster"]:checked').value,
+                    pSit: document.getElementById('personal-situation').value,
+                    pReact: document.getElementById('personal-reaction').value,
+                    pFut: document.getElementById('personal-future').value
                 };
                 
                 const hasContent = Object.values(userAnswers[currentCardId]).some(val => val.trim() !== '');
